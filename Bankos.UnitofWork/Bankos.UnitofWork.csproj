@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Bankos.GenericRepository\Bankos.GenericRepository.csproj" />
+  </ItemGroup>
+
 </Project>
