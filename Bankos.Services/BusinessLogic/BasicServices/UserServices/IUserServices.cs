@@ -1,4 +1,4 @@
-﻿using Bankos.Services.DTO;
+﻿using Bankos.Services.DTOs.UserDTOs;
 using Bankos.Services.Response;
 using System;
 using System.Collections.Generic;
@@ -11,5 +11,6 @@ namespace Bankos.Services.BusinessLogic.BasicServices.UserServices
     public interface IUserServices
     {
         Task<BaseResponseModel> RegisterUser(UserRegisterDTO newUser);
+        Task<GenericResponseModel<string>> LoginUser(UserLoginDTO user);
     }
 }
