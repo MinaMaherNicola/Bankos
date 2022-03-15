@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Bankos.Services.DTOs.UserDTOs
 {
-    public class UserRegisterDTO
+    public class UserLoginDTO
     {
-        public string Name { get; set; } = null!;
         public string Email { get; set; } = null!;
 
         private string password = null!;
@@ -31,5 +30,6 @@ namespace Bankos.Services.DTOs.UserDTOs
                 }
             }
         }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Bankos.DataAccessLayer.Models;
-using Bankos.Services.DTO;
+using Bankos.Services.DTOs.UserDTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;

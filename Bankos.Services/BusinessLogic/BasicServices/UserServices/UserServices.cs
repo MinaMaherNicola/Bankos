@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Bankos.DataAccessLayer.Models;
-using Bankos.Services.DTO;
+using Bankos.Services.DTOs.UserDTOs;
 using Bankos.Services.Response;
 using Bankos.Services.Utilities;
 using Bankos.UnitofWork.UOF;
@@ -21,19 +21,32 @@ namespace Bankos.Services.BusinessLogic.BasicServices.UserServices
             this.unitofWork = unitofWork;
             this.mapper = mapper;
         }
+
+        public async Task<GenericResponseModel<string>> LoginUser(UserLoginDTO user)
+        {
+            var response = new GenericResponseModel<string>();
+
+            var savedUserData = await unitofWork.UsersRepository.FirstOrDefault(u => u.Email == user.Email);
+            if (savedUserData == null)
+            {
+                response.GenerateFailure("Wrong email or password!");
+                return response;
+            }
+            if (!(PasswordManager.VerifyIncomingPassword(user.Password, savedUserData.Password)))
+            {
+                response.GenerateFailure("Wrong email or password!");
+                return response;
+            }
+            response.GenerateSuccess("JWT Token here");
+            return response;
+        }
+
         public async Task<BaseResponseModel> RegisterUser(UserRegisterDTO newUser)
         {
             var response = new BaseResponseModel();
-            try
-            {
-                newUser.Password = PasswordManager.HashPassword(newUser.Password);
-                await unitofWork.UsersRepository.Add(mapper.Map<User>(newUser));
-                await unitofWork.SaveChanges();
-            }
-            catch(Exception ex)
-            {
-                response.GenerateFailure(ex.Message);
-            }
+            newUser.Password = PasswordManager.HashPassword(newUser.Password);
+            await unitofWork.UsersRepository.Add(mapper.Map<User>(newUser));
+            await unitofWork.SaveChanges();
             return response;
         }
     }

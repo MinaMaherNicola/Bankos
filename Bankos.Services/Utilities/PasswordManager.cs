@@ -12,5 +12,10 @@ namespace Bankos.Services.Utilities
         {
             return BCrypt.Net.BCrypt.HashPassword(password);
         }
+
+        public static bool VerifyIncomingPassword(string incomingPassword, string storedPassword)
+        {
+            return BCrypt.Net.BCrypt.Verify(incomingPassword, storedPassword);
+        }
     }
 }
