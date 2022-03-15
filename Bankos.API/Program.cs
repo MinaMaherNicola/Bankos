@@ -4,6 +4,7 @@ using Bankos.GenericRepository.Repo;
 using Bankos.Services.BusinessLogic.BasicServices.UserServices;
 using Bankos.Services.Utilities;
 using Bankos.UnitofWork.UOF;
+using Bankos.API.Middleware.GlobalErrorHandler;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +36,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseGlobalErrorHandler();
 
 app.UseHttpsRedirection();
 
