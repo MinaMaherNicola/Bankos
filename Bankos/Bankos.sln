@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.1.32210.238
+VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bankos.API", "Bankos.API\Bankos.API.csproj", "{3DB8F291-10ED-4430-8B32-5AAE0096BE9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bankos.API", "Bankos.API\Bankos.API.csproj", "{7D5844FE-2131-4EA8-B03C-9E8EF5C7B7AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3DB8F291-10ED-4430-8B32-5AAE0096BE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DB8F291-10ED-4430-8B32-5AAE0096BE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DB8F291-10ED-4430-8B32-5AAE0096BE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3DB8F291-10ED-4430-8B32-5AAE0096BE9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D5844FE-2131-4EA8-B03C-9E8EF5C7B7AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D5844FE-2131-4EA8-B03C-9E8EF5C7B7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D5844FE-2131-4EA8-B03C-9E8EF5C7B7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D5844FE-2131-4EA8-B03C-9E8EF5C7B7AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4F47AE0D-7459-4F68-B0FD-7C604DD5C7B7}
+		SolutionGuid = {D74493EE-C617-4AE9-BC44-B0CC7D2B6310}
 	EndGlobalSection
 EndGlobal
