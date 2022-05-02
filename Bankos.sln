@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bankos.DB", "Bankos.DB\Bank
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bankos.Repository", "Bankos.Repository\Bankos.Repository.csproj", "{D7439DD7-2855-441F-8D86-9B934F71089B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bankos.UnitofWork", "Bankos.UnitofWork\Bankos.UnitofWork.csproj", "{7729C75A-66DC-47CC-A4AF-CD67CC7027EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D7439DD7-2855-441F-8D86-9B934F71089B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7439DD7-2855-441F-8D86-9B934F71089B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7439DD7-2855-441F-8D86-9B934F71089B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7729C75A-66DC-47CC-A4AF-CD67CC7027EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7729C75A-66DC-47CC-A4AF-CD67CC7027EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7729C75A-66DC-47CC-A4AF-CD67CC7027EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7729C75A-66DC-47CC-A4AF-CD67CC7027EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
