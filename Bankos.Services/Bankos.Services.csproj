@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Bankos.DB\Bankos.DB.csproj" />
-    <ProjectReference Include="..\Bankos.Repository\Bankos.Repository.csproj" />
+    <ProjectReference Include="..\Bankos.UnitofWork\Bankos.UnitofWork.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,8 @@
 using Bankos.DB;
+using Bankos.Repository.Repository;
+using Bankos.Services.Services.Users;
+using Bankos.Services.Utils;
+using Bankos.UnitofWork.UoF;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +12,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
+
+builder.Services.AddScoped(typeof(IBankosRepository<>), typeof(BankosRepository<>));
+builder.Services.AddScoped<IUnitofWork, UnitofWork>();
+builder.Services.AddScoped<IUserServices, UserServices>();
 
 builder.Services.AddDbContext<MainContext>();
 
