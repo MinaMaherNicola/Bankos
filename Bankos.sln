@@ -5,7 +5,13 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bankos.API", "Bankos.API\Bankos.API.csproj", "{CE049CA6-3676-4D3C-AA63-1481AA8AEFEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bankos.DB", "Bankos.DB\Bankos.DB.csproj", "{6D52DCDB-39F2-4B2A-B208-135D8B9DE2BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bankos.DB", "Bankos.DB\Bankos.DB.csproj", "{6D52DCDB-39F2-4B2A-B208-135D8B9DE2BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bankos.GenericRepo", "Bankos.GenericRepo\Bankos.GenericRepo.csproj", "{EE302A20-093D-460E-8205-12EC4E184D28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bankos.UnitofWork", "Bankos.UnitofWork\Bankos.UnitofWork.csproj", "{19321388-3F66-4E1A-A840-0E00C48D3CBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bankos.Services", "Bankos.Services\Bankos.Services.csproj", "{B609170C-55E0-4EE8-A43C-744D704B2C97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{6D52DCDB-39F2-4B2A-B208-135D8B9DE2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D52DCDB-39F2-4B2A-B208-135D8B9DE2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D52DCDB-39F2-4B2A-B208-135D8B9DE2BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE302A20-093D-460E-8205-12EC4E184D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE302A20-093D-460E-8205-12EC4E184D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE302A20-093D-460E-8205-12EC4E184D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE302A20-093D-460E-8205-12EC4E184D28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19321388-3F66-4E1A-A840-0E00C48D3CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19321388-3F66-4E1A-A840-0E00C48D3CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19321388-3F66-4E1A-A840-0E00C48D3CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19321388-3F66-4E1A-A840-0E00C48D3CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B609170C-55E0-4EE8-A43C-744D704B2C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B609170C-55E0-4EE8-A43C-744D704B2C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B609170C-55E0-4EE8-A43C-744D704B2C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B609170C-55E0-4EE8-A43C-744D704B2C97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

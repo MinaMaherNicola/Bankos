@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -15,11 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Bankos.DB\Bankos.DB.csproj" />
+    <ProjectReference Include="..\Bankos.GenericRepo\Bankos.GenericRepo.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Bankos.DB\Bankos.DB.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
