@@ -13,5 +13,8 @@ namespace Bankos.DB
         public BankosContext(DbContextOptions<BankosContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; } = null!;
+        public DbSet<UserRole> UserRoles { get; set; } = null!;
+        public DbSet<Account> Accounts { get; set; } = null!;
+        public DbSet<AccountType> AccountTypes { get; set; } = null!;
     }
 }

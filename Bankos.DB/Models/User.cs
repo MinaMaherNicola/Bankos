@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Bankos.DB.Models
         public DateTime BirthDate { get; set; }
         public bool IsActive { get; set; } = false;
         public DateTime? LastLogin { get; set; }
+        public virtual UserRole UserRole { get; set; } = null!;
         public virtual ICollection<Account>? Accounts { get; set; }
 
     }

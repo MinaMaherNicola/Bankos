@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bankos.DB.Migrations
 {
     [DbContext(typeof(BankosContext))]
-    [Migration("20220608202814_AddingAccount")]
-    partial class AddingAccount
+    [Migration("20220611203504_AddedNormalizedRoleNameAndRemovedRoleIdFromUsers")]
+    partial class AddedNormalizedRoleNameAndRemovedRoleIdFromUsers
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,7 +45,7 @@ namespace Bankos.DB.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Account");
+                    b.ToTable("Accounts");
                 });
 
             modelBuilder.Entity("Bankos.DB.Models.AccountType", b =>
@@ -68,7 +68,7 @@ namespace Bankos.DB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AccountType");
+                    b.ToTable("AccountTypes");
                 });
 
             modelBuilder.Entity("Bankos.DB.Models.User", b =>
@@ -91,9 +91,35 @@ namespace Bankos.DB.Migrations
                     b.Property<DateTime?>("LastLogin")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("UserRoleId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("UserRoleId");
+
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Bankos.DB.Models.UserRole", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("NormalizedRoleName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserRoles");
                 });
 
             modelBuilder.Entity("Bankos.DB.Models.Account", b =>
@@ -117,7 +143,23 @@ namespace Bankos.DB.Migrations
 
             modelBuilder.Entity("Bankos.DB.Models.User", b =>
                 {
+                    b.HasOne("Bankos.DB.Models.UserRole", "UserRole")
+                        .WithMany("Users")
+                        .HasForeignKey("UserRoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserRole");
+                });
+
+            modelBuilder.Entity("Bankos.DB.Models.User", b =>
+                {
                     b.Navigation("Accounts");
+                });
+
+            modelBuilder.Entity("Bankos.DB.Models.UserRole", b =>
+                {
+                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }
