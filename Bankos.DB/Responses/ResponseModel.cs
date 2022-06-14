@@ -8,18 +8,18 @@ namespace Bankos.DB.Responses
 {
     public class ResponseModel
     {
-        private bool _success = true;
-        private string _message = null!;
+        public bool Success { get; set; } = true;
+        public string Message { get; set; } = null!;
 
         public void GenerateSuccess(string message)
         {
-            _message = message;
+            Message = message;
         }
 
         public void GenerateFailure(string message)
         {
-            _success = false;
-            _message = message;
+            Success = false;
+            Message = message;
         }
     }
 }

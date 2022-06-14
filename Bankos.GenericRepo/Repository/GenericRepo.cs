@@ -35,5 +35,9 @@ namespace Bankos.GenericRepo.Repository
         {
             return await _set.FindAsync(id);
         }
+        public async Task<TEntity?> FirstOrDefault(Expression<Func<TEntity, bool>> search)
+        {
+            return await _set.FirstOrDefaultAsync(search);
+        }
     }
 }

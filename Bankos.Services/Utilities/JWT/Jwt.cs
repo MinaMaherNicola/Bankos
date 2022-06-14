@@ -30,17 +30,14 @@ namespace Bankos.Services.Utilities.JWT
             _duration = int.Parse(_configuration.GetSection("Jwt:Duration").Value);
         }
 
-        public GenericResponseModel<LoginDTO> CreateUserToken(User user)
+        public TokenDTO CreateUserToken(User user)
         {
-            var response = new GenericResponseModel<LoginDTO>();
+            var response = new GenericResponseModel<LoginSuccessDTO>();
 
             JwtSecurityToken jwtSecurityToken = GenerateNewJwtToken(user);
             JwtSecurityTokenHandler jwtHandler = new();
             string stringToken = jwtHandler.WriteToken(jwtSecurityToken);
-            var result = new LoginDTO() { FullName = user.FullName, ExpiresOn = jwtSecurityToken.ValidTo, Token = stringToken };
-
-            response.GenerateSuccess(result);
-            return response;
+            return new LoginSuccessDTO() { FullName = user.FullName, ExpiresOn = jwtSecurityToken.ValidTo, Token = stringToken };
         }
 
         private JwtSecurityToken GenerateNewJwtToken(User user)

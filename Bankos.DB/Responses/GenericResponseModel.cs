@@ -8,18 +8,18 @@ namespace Bankos.DB.Responses
 {
     public class GenericResponseModel<T> : ResponseModel
     {
-        private T? _data;
+        public T? Data { get; set; }
 
         public void GenerateSuccess(T? data, string message = "Success")
         {
             GenerateSuccess(message);
-            _data = data;
+            Data = data;
         }
 
         public void GenerateFailure(T? data, string message = "Failure")
         {
             GenerateFailure(message);
-            _data = data;
+            Data = data;
         }
     }
 }

@@ -11,6 +11,6 @@ namespace Bankos.Services.Utilities.JWT
 {
     public interface IJwt
     {
-        GenericResponseModel<LoginDTO> CreateUserToken(User user);
+        TokenDTO CreateUserToken(User user);
     }
 }

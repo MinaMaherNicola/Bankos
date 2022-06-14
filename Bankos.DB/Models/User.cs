@@ -14,9 +14,14 @@ namespace Bankos.DB.Models
 
         [MaxLength(255)]
         public string FullName { get; set; } = null!;
+        public string Email { get; set; } = null!;
+        public string Password { get; set; } = null!;
         public DateTime BirthDate { get; set; }
         public bool IsActive { get; set; } = false;
         public DateTime? LastLogin { get; set; }
+        public int UserRoleId { get; set; }
+
+        [ForeignKey(nameof(UserRoleId))]
         public virtual UserRole UserRole { get; set; } = null!;
         public virtual ICollection<Account>? Accounts { get; set; }
 

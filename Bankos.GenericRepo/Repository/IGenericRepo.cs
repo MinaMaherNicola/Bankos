@@ -13,5 +13,6 @@ namespace Bankos.GenericRepo.Repository
         Task<TEntity> Add(TEntity entity);
         Task<IEnumerable<TEntity>> AddRange(IEnumerable<TEntity> entities);
         Task<TEntity?> GetById(int id);
+        Task<TEntity?> FirstOrDefault(Expression<Func<TEntity, bool>> search);
     }
 }

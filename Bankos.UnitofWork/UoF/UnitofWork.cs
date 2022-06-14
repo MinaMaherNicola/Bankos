@@ -17,15 +17,19 @@ namespace Bankos.UnitofWork.UoF
 
         public IGenericRepo<User> UserRepository { get; }
 
+        public IGenericRepo<UserRole> UserRolesRepository { get; }
+
         public UnitofWork(BankosContext context,
                           IGenericRepo<Account> accountRepository,
                           IGenericRepo<AccountType> accountTypeRepository,
-                          IGenericRepo<User> userRepository)
+                          IGenericRepo<User> userRepository,
+                          IGenericRepo<UserRole> userRolesRepository)
         {
             _context = context;
             AccountRepository = accountRepository;
             AccountTypeRepository = accountTypeRepository;
             UserRepository = userRepository;
+            UserRolesRepository = userRolesRepository;
         }
 
         public async ValueTask DisposeAsync()
