@@ -13,6 +13,7 @@ namespace Bankos.UnitofWork.UoF
         IGenericRepo<Account> AccountRepository { get; }
         IGenericRepo<AccountType> AccountTypeRepository { get; }
         IGenericRepo<User> UserRepository { get; }
+        IGenericRepo<UserRole> UserRolesRepository { get; }
         Task<int> SaveChanges();
     }
 }
